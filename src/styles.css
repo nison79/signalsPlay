@@ -1,1 +1,194 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #495057;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Basic utility classes */
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.max-w-md {
+  max-width: 28rem;
+}
+
+/* Basic structural classes */
+.block {
+  display: block;
+}
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+/* Text styles */
+.text-center {
+  text-align: center;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+
+/* Card styles */
+.p-card {
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  padding: 1.5rem;
+}
+
+/* Form Input Styles */
+.p-inputtext {
+  padding: 0.5rem;
+  border: 1px solid var(--surface-d);
+  border-radius: var(--border-radius);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.p-inputtext.p-invalid {
+  border-color: #f44336;
+}
+
+/* Button Styles */
+.p-button {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color-text);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+.p-button:enabled:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.p-button:enabled:active {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.p-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Card Styles */
+.p-card {
+  background: var(--surface-e);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+}
+
+/* Error Message Style */
+.p-error {
+  color: #f44336;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* PrimeFlex Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}

@@ -1,1 +1,55 @@
-<h2>Hello George</h2>
+<div class="p-card p-shadow-2 max-w-md mx-auto mt-8 p-4">
+  <h2 class="text-3xl font-bold text-center mb-4">Hello George</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid" novalidate>
+    <div class="field mb-4">
+      <label for="firstName" class="block font-bold mb-2">First Name</label>
+      <input
+        id="firstName"
+        pInputText
+        formControlName="firstName"
+        type="text"
+        [ngClass]="{
+          'ng-invalid ng-dirty':
+            form.get('firstName')?.invalid && form.get('firstName')?.touched
+        }"
+      />
+      <small
+        *ngIf="form.get('firstName')?.invalid && form.get('firstName')?.touched"
+        class="p-error block mt-1"
+      >
+        First name is required
+      </small>
+    </div>
+
+    <div class="field mb-4">
+      <label for="lastName" class="block font-bold mb-2">Last Name</label>
+      <input
+        id="lastName"
+        pInputText
+        formControlName="lastName"
+        type="text"
+        [ngClass]="{
+          'ng-invalid ng-dirty':
+            form.get('lastName')?.invalid && form.get('lastName')?.touched
+        }"
+      />
+      <small
+        *ngIf="form.get('lastName')?.invalid && form.get('lastName')?.touched"
+        class="p-error block mt-1"
+      >
+        Last name is required
+      </small>
+    </div>
+
+    <div class="field">
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        [disabled]="form.invalid"
+        class="p-button-primary"
+      ></button>
+    </div>
+  </form>
+</div>

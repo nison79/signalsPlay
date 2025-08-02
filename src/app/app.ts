@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { HelloGeorgeComponent } from './hello-george/hello-george.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HelloGeorgeComponent],
+  standalone: true,
+  imports: [HelloGeorgeComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
