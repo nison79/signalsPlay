@@ -7,7 +7,7 @@ import { CardModule } from 'primeng/card';
   standalone: true,
   imports: [CommonModule, CardModule],
   templateUrl: './metrics-cards.component.html',
-  styleUrls: ['./metrics-cards.component.css']
+  styleUrls: ['./metrics-cards.component.css'],
 })
 export class MetricsCardsComponent {
   // example inputs for metrics

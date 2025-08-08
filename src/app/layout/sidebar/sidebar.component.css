@@ -1,2 +1,8 @@
-.sidebar { width: 280px; }
-@media (max-width: 960px) { .sidebar { width: 100%; } }
+.sidebar {
+  width: 280px;
+}
+@media (max-width: 960px) {
+  .sidebar {
+    width: 100%;
+  }
+}

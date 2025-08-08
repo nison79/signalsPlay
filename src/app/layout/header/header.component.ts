@@ -8,9 +8,15 @@ import { MenubarModule } from 'primeng/menubar';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, ButtonModule, AvatarModule, BadgeModule, MenubarModule],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    AvatarModule,
+    BadgeModule,
+    MenubarModule,
+  ],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
   title = 'Καλημέρα, Κώστα';

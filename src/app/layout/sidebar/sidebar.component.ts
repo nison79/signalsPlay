@@ -8,7 +8,7 @@ import { MenuItem } from 'primeng/api';
   standalone: true,
   imports: [CommonModule, PanelMenuModule],
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
   model: MenuItem[] = [
@@ -16,8 +16,8 @@ export class SidebarComponent {
       label: 'Workflows',
       items: [
         { label: 'Dashboard', icon: 'pi pi-home' },
-        { label: 'Reports', icon: 'pi pi-chart-line' }
-      ]
+        { label: 'Reports', icon: 'pi pi-chart-line' },
+      ],
     },
     {
       label: 'Προϊόντα',
@@ -26,8 +26,8 @@ export class SidebarComponent {
         { label: 'Κάρτες', icon: 'pi pi-id-card' },
         { label: 'Καταναλωτικό', icon: 'pi pi-shopping-bag' },
         { label: 'Στεγαστικό', icon: 'pi pi-building' },
-        { label: 'Επιχειρηματικό', icon: 'pi pi-briefcase' }
-      ]
-    }
+        { label: 'Επιχειρηματικό', icon: 'pi pi-briefcase' },
+      ],
+    },
   ];
 }

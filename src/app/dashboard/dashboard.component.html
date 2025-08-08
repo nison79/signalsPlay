@@ -37,7 +37,7 @@
             [(ngModel)]="selectedCategory"
             placeholder="Category"
             [showClear]="true"
-            style="min-width:10rem"
+            style="min-width: 10rem"
           ></p-select>
           <div class="flex align-items-center gap-2">
             <p-checkbox
@@ -63,7 +63,9 @@
         </div>
         <div class="col-12 md:col-8">
           <p-panel header="Progress">
-            <p-progressBar [value]="items.length ? items[0].progress : 0"></p-progressBar>
+            <p-progressBar
+              [value]="items.length ? items[0].progress : 0"
+            ></p-progressBar>
           </p-panel>
         </div>
       </div>
