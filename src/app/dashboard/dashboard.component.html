@@ -1,0 +1,128 @@
+<div class="layout">
+  <aside class="layout-sidebar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <main class="layout-main">
+    <app-header></app-header>
+
+    <app-metrics-cards></app-metrics-cards>
+
+    <!-- Filters toolbar -->
+    <p-toolbar class="mb-3">
+      <ng-template pTemplate="start">
+        <div class="flex align-items-center gap-2">
+          <button pButton label="New" icon="pi pi-plus"></button>
+          <button
+            pButton
+            label="Export"
+            icon="pi pi-upload"
+            class="p-button-help"
+          ></button>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="end">
+        <div class="flex align-items-center gap-2">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input
+              type="text"
+              pInputText
+              placeholder="Search for..."
+              [(ngModel)]="globalFilter"
+            />
+          </span>
+          <p-select
+            [options]="categoryOptions"
+            [(ngModel)]="selectedCategory"
+            placeholder="Category"
+            [showClear]="true"
+            style="min-width:10rem"
+          ></p-select>
+          <div class="flex align-items-center gap-2">
+            <p-checkbox
+              binary
+              [(ngModel)]="onlyActive"
+              inputId="onlyMine"
+            ></p-checkbox>
+            <label for="onlyMine">Μόνο οι εκκρεμότητές μου</label>
+          </div>
+        </div>
+      </ng-template>
+    </p-toolbar>
+
+    <p-card header="Overview" class="mb-4">
+      <div class="grid">
+        <div class="col-12 md:col-4">
+          <p-panel header="Summary">
+            <div class="flex align-items-center gap-3">
+              <span class="font-bold">Total:</span>
+              <span>{{ items.length }}</span>
+            </div>
+          </p-panel>
+        </div>
+        <div class="col-12 md:col-8">
+          <p-panel header="Progress">
+            <p-progressBar [value]="items.length ? items[0].progress : 0"></p-progressBar>
+          </p-panel>
+        </div>
+      </div>
+    </p-card>
+
+    <!-- Data table -->
+    <p-table
+      [value]="filteredItems"
+      [paginator]="true"
+      [rows]="5"
+      [resizableColumns]="true"
+      [rowHover]="true"
+      responsiveLayout="scroll"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th pResizableColumn>ID</th>
+          <th pResizableColumn>Name</th>
+          <th pResizableColumn>Status</th>
+          <th pResizableColumn>Owner</th>
+          <th pResizableColumn>Category</th>
+          <th pResizableColumn>Created</th>
+          <th pResizableColumn>Progress</th>
+          <th style="width: 8rem"></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-row>
+        <tr>
+          <td>{{ row.id }}</td>
+          <td>{{ row.name }}</td>
+          <td>
+            <p-tag
+              [severity]="getStatusSeverity(row.status)"
+              [value]="row.status"
+            ></p-tag>
+          </td>
+          <td>{{ row.owner }}</td>
+          <td>{{ row.category }}</td>
+          <td>{{ row.createdAt }}</td>
+          <td>
+            <p-progressBar
+              [value]="row.progress"
+              [showValue]="false"
+            ></p-progressBar>
+          </td>
+          <td class="flex gap-2">
+            <button
+              pButton
+              icon="pi pi-pencil"
+              class="p-button-text p-button-sm"
+            ></button>
+            <button
+              pButton
+              icon="pi pi-trash"
+              class="p-button-text p-button-danger p-button-sm"
+            ></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </main>
+</div>

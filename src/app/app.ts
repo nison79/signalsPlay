@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { HelloGeorgeComponent } from './hello-george/hello-george.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HelloGeorgeComponent],
+  imports: [DashboardComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
